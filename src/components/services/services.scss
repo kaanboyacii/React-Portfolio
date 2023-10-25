@@ -1,3 +1,4 @@
+@import "../../app.scss";
 .services {
   background: linear-gradient(180deg, #0c0c1d, #111132);
   height: 100%;
@@ -12,6 +13,12 @@
     align-items: center;
     gap: 20px;
 
+    @include mobile {
+      align-self: center;
+      text-align: center;
+      flex-direction: column;
+    }
+
     p {
       font-weight: 200;
       font-size: 20px;
@@ -23,6 +30,10 @@
       width: 500px;
       border: none;
       border-top: 0.5px solid gray;
+
+      @include mobile {
+        width: 300px;
+      }
     }
   }
   .titleContainer {
@@ -31,22 +42,40 @@
     flex-direction: column;
     align-items: center;
 
+    @include mobile {
+      width: 100%;
+    }
+
     .title {
       display: flex;
       align-items: center;
       gap: 50px;
+
+      @include mobile {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+      }
 
       img {
         width: 300px;
         height: 100px;
         border-radius: 50px;
         object-fit: cover;
+
+        @include mobile {
+          width: 200px;
+          height: 50px;
+        }
       }
 
       h1 {
         font-size: 96px;
         font-weight: 100;
 
+        @include mobile {
+          font-size: 36px;
+        }
       }
 
       button {
@@ -58,6 +87,11 @@
         font-size: 24px;
         cursor: pointer;
 
+        @include mobile {
+          font-size: 16px;
+          width: 150px;
+          height: 50px;
+        }
       }
     }
   }
@@ -67,25 +101,46 @@
     max-width: 1366px;
     margin: auto;
 
+    @include mobile {
+      flex-direction: column;
+      width: 100%;
+    }
+
     .box {
-        padding: 50px;
-        border: 0.5px solid gray;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        transition: background-color 1s;
-      
-        &:hover {
-          background-color: gray;
-        }
-      
-        button {
-          padding: 10px;
-          background-color: orange;
-          border: none;
-          cursor: pointer;
+      padding: 50px;
+      border: 0.5px solid gray;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      @include mobile {
+        border: none;
+        align-items: center;
+        gap: 20px;
+        padding: 10px;
+      }
+
+      p {
+        @include mobile {
+          display: none;
         }
       }
-      
+
+      button {
+        padding: 10px;
+        background-color: orange;
+        border: none;
+        cursor: pointer;
+
+        @include mobile {
+          background-color: transparent;
+          border: 1px solid orange;
+          border-radius: 5px;
+          color: orange;
+          width: 50%;
+          padding: 5px;
+        }
+      }
+    }
   }
 }
